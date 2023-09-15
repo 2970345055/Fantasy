@@ -18,13 +18,14 @@ public static class FantasySettingsHelper
     public static void Initialize()
     {
         const string settingsName = "FantasySettings.json";
+        //首先获取当前目录的路径
         var currentDirectory = Directory.GetCurrentDirectory();
 
         if (!File.Exists(Path.Combine(currentDirectory, settingsName)))
         {
             throw new FileNotFoundException($"not found {settingsName} in OutputDirectory");
         }
-
+  
         var configurationRoot = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile(settingsName).Build();
         // 加载网络配置
         LoadNetworkConfig(configurationRoot);

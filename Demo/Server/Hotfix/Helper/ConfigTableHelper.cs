@@ -80,6 +80,7 @@ public static class ConfigTableHelper
                 OuterPort = sceneConfig.OuterPort
             };
         };
+        //遍历所有配置服务器 并且启动
         ConfigTableManage.AllServerConfig = () =>
         {
             var list = new List<ServerConfigInfo>();
@@ -114,6 +115,7 @@ public static class ConfigTableHelper
         
             return list;
         };
+        
         ConfigTableManage.AllSceneConfig = () =>
         {
             var list = new List<SceneConfigInfo>();

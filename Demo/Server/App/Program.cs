@@ -26,6 +26,7 @@ try
     // 绑定框架需要的配置文件
     // 框架启动服务器需要配置文件才可以启动、比如需要启动什么服务器、服务器的监听地址是什么等等、所以要提前绑定一下
     ConfigTableHelper.Bind();
+    
     // 启动框架
     // 启动框架会加载Demo下Config/Excel/Server里四个文件配置
     // 因为上面ConfigTableHelper.Bind已经绑定好了、所以框架可以直接读取这4个配置文件进行启动

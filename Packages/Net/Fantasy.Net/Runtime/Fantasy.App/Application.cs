@@ -24,7 +24,7 @@ namespace Fantasy
             Parser.Default.ParseArguments<CommandLineOptions>(Environment.GetCommandLineArgs())
                 .WithNotParsed(error => throw new Exception("Command line format error!"))
                 .WithParsed(option => AppDefine.Options = option);
-            // 加载配置
+            // TODO 加载配置
             FantasySettingsHelper.Initialize();
             // 检查启动参数
             switch (AppDefine.Options.AppType)

@@ -135,11 +135,11 @@ namespace Fantasy
         }
 
         #region Static
-        // 存储已创建的服务器的字典。
+        // TODO 存储已创建的服务器的字典。
         private static readonly Dictionary<uint, Server> Servers = new Dictionary<uint, Server>();
 
         /// <summary>
-        /// 创建并初始化具有指定服务器配置的服务器。
+        /// 创建并初始化具有指定服务器配置的服务器。 TODO 创建服务器
         /// </summary>
         /// <param name="serverConfigId">服务器配置的标识符。</param>
         public static async FTask Create(uint serverConfigId)
@@ -159,7 +159,7 @@ namespace Fantasy
                 Log.Error($"not found machine by Id:{serverConfigInfo.MachineId}");
                 return;
             }
-            
+            //
             var sceneInfos = Scene.GetSceneInfoByServerConfigId(serverConfigId);
             await Create(serverConfigId, machineConfigInfo.InnerBindIP, serverConfigInfo.InnerPort, machineConfigInfo.OuterBindIP, sceneInfos);
             Log.Debug($"ServerId:{serverConfigId} is start complete");
@@ -187,10 +187,10 @@ namespace Fantasy
             {
                 Id = serverConfigId
             };
-
+            //创建一个Scene 
             server.Scene = await Scene.Create(server);
 
-            // 创建网络、Server下的网络只能是内部网络、外部网络是在Scene中定义
+            // 创建网络、Server下的网络只能是内部网络、外部网络是在Scene中定义    
             
             if (!string.IsNullOrEmpty(innerBindIp) && innerPort != 0)
             {
